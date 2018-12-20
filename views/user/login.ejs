@@ -1,0 +1,32 @@
+<%- include('../includes/head.ejs') %>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<style>
+    .form-control {
+        width: 30%;
+    }
+</style>
+</head>
+<body>
+
+    <%- include('../includes/navigation.ejs') %>
+
+<h1>Login</h1>
+
+<form action="/login" method="POST">
+    <div class="form-group">
+        <label for="username">User Name</label>
+        <input class="form-control" type="text" name="username" id="username" placeholder="Username">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" type="password" name="password" placeholder="Password">
+    </div>
+    <button class="btn btn-primary" type="submit">Login</button>
+</form>
+
+<h3>create new account</h3>
+<a href="/register">Create Account</a>
+
+<%- include('../includes/end.ejs') %>

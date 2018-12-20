@@ -1,0 +1,46 @@
+<%- include('../includes/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/table.css">
+</head>
+<body>
+
+<main>
+    <form class="product-form" action="/admin/edit-student" method="POST">
+        <div class="form-control">
+            <label for="studentId">Student ID</label>
+            <input type="number" name="studentId" id="studentId" value="<%= student.studentId %>" required>
+        </div>
+        <div class="form-control">
+            <label for="studentName">Student Name</label>
+            <input type="text" name="studentName" id="studentName" value="<%= student.studentName %>" required>
+        </div>
+        <div class="form-control">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="<%= student.email %>" required>
+        </div>
+        <div class="form-control">
+            <label for="class">Class</label>
+            <input type="text" name="class" id="class" value="<%= student.class %>" required>
+        </div>
+        <div class="form-control">
+            <label for="year">Enrollement Year</label>
+            <input type="number" name="year" id="year" value="<%= student.year %>" required>
+        </div>
+        <div class="form-control">
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" value="<%= student.city %>" required>
+        </div>
+        <div class="form-control">
+            <label for="country">Country</label>
+            <input type="text" name="country" id="country" value="<%= student.country %>" required>
+        </div>
+
+        <input type="hidden" value="<%= student._id %>" name="studentId2">
+        
+        <button class="btn" type="submit">Update Student</button>
+    </form>
+</main>
+
+<%- include('../includes/end.ejs') %>
