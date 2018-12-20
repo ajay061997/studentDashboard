@@ -19,7 +19,7 @@ app.set('views', 'views');
 // Routes
 const adminRoutes = require('./routes/admin');
 
-mongoose.connect('mongodb://ajay:nikhiajay1@ds139944.mlab.com:39944/userdashboard', { useNewUrlParser: true });
+mongoose.connect(process.env.DB, { useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -42,7 +42,7 @@ app.use(function(req, res, next) {
 })
 
 app.get('/', (req, res, next) => {
-    res.send('welcome');
+    res.redirect('/login');
 })
 
 // use routes
