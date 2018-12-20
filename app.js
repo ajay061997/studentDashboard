@@ -19,7 +19,7 @@ app.set('views', 'views');
 // Routes
 const adminRoutes = require('./routes/admin');
 
-mongoose.connect(process.env.DB);
+mongoose.connect(process.env.DB, {useNewUrlParser: true});
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
