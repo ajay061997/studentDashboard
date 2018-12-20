@@ -93,6 +93,6 @@ app.get('/logout', function(req, res) {
     res.redirect('/login');
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT, process.env.IP, function() {
     console.log('3000 running');
-})
+});
